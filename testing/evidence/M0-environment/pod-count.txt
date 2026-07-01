@@ -1,0 +1,4 @@
+--- Pod counts ---
+Parallel STS total: 115
+Parallel STS running: 115
+OrderedReady STS total: 10

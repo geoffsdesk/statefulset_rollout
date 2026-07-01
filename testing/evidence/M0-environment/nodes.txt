@@ -1,0 +1,6 @@
+NAME                                              STATUS   ROLES    AGE   VERSION               INTERNAL-IP    EXTERNAL-IP      OS-IMAGE                             KERNEL-VERSION   CONTAINER-RUNTIME
+gke-sts-rollout-test-default-pool-d1b7f613-dgbs   Ready    <none>   89s   v1.35.5-gke.1324000   10.128.0.119   34.27.188.56     Container-Optimized OS from Google   6.12.85+         containerd://2.1.7
+gke-sts-rollout-test-default-pool-d1b7f613-hz4b   Ready    <none>   92s   v1.35.5-gke.1324000   10.128.0.117   34.132.31.134    Container-Optimized OS from Google   6.12.85+         containerd://2.1.7
+gke-sts-rollout-test-default-pool-d1b7f613-mrr0   Ready    <none>   89s   v1.35.5-gke.1324000   10.128.0.120   34.29.28.134     Container-Optimized OS from Google   6.12.85+         containerd://2.1.7
+gke-sts-rollout-test-default-pool-d1b7f613-n2fb   Ready    <none>   86s   v1.35.5-gke.1324000   10.128.0.121   34.27.171.19     Container-Optimized OS from Google   6.12.85+         containerd://2.1.7
+gke-sts-rollout-test-default-pool-d1b7f613-wpzh   Ready    <none>   90s   v1.35.5-gke.1324000   10.128.0.88    136.64.154.219   Container-Optimized OS from Google   6.12.85+         containerd://2.1.7

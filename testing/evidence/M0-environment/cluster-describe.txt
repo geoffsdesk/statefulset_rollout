@@ -1,0 +1,235 @@
+addonsConfig:
+  dnsCacheConfig:
+    enabled: true
+  gcePersistentDiskCsiDriverConfig:
+    enabled: true
+  kubernetesDashboard:
+    disabled: true
+  networkPolicyConfig:
+    disabled: true
+  nodeReadinessConfig: {}
+anonymousAuthenticationConfig:
+  mode: LIMITED
+autopilot: {}
+autoscaling:
+  autoprovisioningNodePoolDefaults:
+    imageType: COS_CONTAINERD
+    management: {}
+    oauthScopes:
+    - https://www.googleapis.com/auth/devstorage.read_only
+    - https://www.googleapis.com/auth/logging.write
+    - https://www.googleapis.com/auth/monitoring
+    - https://www.googleapis.com/auth/service.management.readonly
+    - https://www.googleapis.com/auth/servicecontrol
+    - https://www.googleapis.com/auth/trace.append
+    serviceAccount: default
+  autoscalingProfile: BALANCED
+clusterIpv4Cidr: 10.12.0.0/14
+controlPlaneEgress:
+  mode: VIA_CONTROL_PLANE
+controlPlaneEndpointsConfig:
+  dnsEndpointConfig:
+    allowExternalTraffic: false
+    enableK8sCertsViaDns: false
+    enableK8sTokensViaDns: false
+    endpoint: gke-907e81df1e05477482098a31a255f68b0278-430842625863.us-central1-a.gke.goog
+  ipEndpointsConfig:
+    authorizedNetworksConfig: {}
+    enablePublicEndpoint: true
+    enabled: true
+    privateEndpoint: 10.128.0.86
+    publicEndpoint: 34.29.4.126
+createTime: '2026-07-01T03:25:25+00:00'
+currentMasterVersion: 1.35.5-gke.1324000
+currentNodeCount: 5
+currentNodeVersion: 1.35.5-gke.1324000
+databaseEncryption:
+  currentState: CURRENT_STATE_DECRYPTED
+  state: DECRYPTED
+defaultMaxPodsConstraint:
+  maxPodsPerNode: '110'
+endpoint: 34.29.4.126
+enterpriseConfig:
+  clusterTier: STANDARD
+etag: 3a458189-fa6d-4e6f-9745-a87cf9d65486
+id: 907e81df1e05477482098a31a255f68b0278db720e7745aca6fd6686208ac5cf
+initialClusterVersion: 1.35.5-gke.1324000
+instanceGroupUrls:
+- https://www.googleapis.com/compute/v1/projects/geoffanderson-gke-dev/zones/us-central1-a/instanceGroupManagers/gke-sts-rollout-test-default-pool-d1b7f613-grp
+ipAllocationPolicy:
+  clusterIpv4Cidr: 10.12.0.0/14
+  clusterIpv4CidrBlock: 10.12.0.0/14
+  clusterSecondaryRangeName: gke-sts-rollout-test-pods-907e81df
+  defaultPodIpv4RangeUtilization: 0.0049
+  networkTierConfig:
+    networkTier: NETWORK_TIER_DEFAULT
+  podCidrOverprovisionConfig: {}
+  servicesIpv4Cidr: 34.118.224.0/20
+  servicesIpv4CidrBlock: 34.118.224.0/20
+  stackType: IPV4
+  useIpAliases: true
+labelFingerprint: a9dc16a7
+legacyAbac: {}
+location: us-central1-a
+locations:
+- us-central1-a
+loggingConfig:
+  componentConfig:
+    enableComponents:
+    - SYSTEM_COMPONENTS
+    - WORKLOADS
+loggingService: logging.googleapis.com/kubernetes
+maintenancePolicy:
+  resourceVersion: e3b0c442
+masterAuth:
+  clientCertificateConfig: {}
+  clusterCaCertificate: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVMVENDQXBXZ0F3SUJBZ0lSQUwvTzJhZ3kzdi9BOHRETExnM0ZDV1F3RFFZSktvWklodmNOQVFFTEJRQXcKTHpFdE1Dc0dBMVVFQXhNa1pqUXdaRGd3TXpjdE9XWm1PUzAwTVRSbExXSmxORE10WVRZM1kyTXpOek5sTVRWbQpNQ0FYRFRJMk1EY3dNVEF5TWpVeU5sb1lEekl3TlRZd05qSXpNRE15TlRJMldqQXZNUzB3S3dZRFZRUURFeVJtCk5EQmtPREF6TnkwNVptWTVMVFF4TkdVdFltVTBNeTFoTmpkall6TTNNMlV4TldZd2dnR2lNQTBHQ1NxR1NJYjMKRFFFQkFRVUFBNElCandBd2dnR0tBb0lCZ1FEWVZrRDFkcDZWY2NDbDhxY2pJVzgzd04vOGNGM1BYZ2tHT2J1agp6bEZKR3hBN0VuWi91UCs5dnhzU2drbHpLWmN0T3hGSDBHZWkwUS9GUWdpbjR2cXdMUEVHalFUbW1uaW9LOTNzClFmU0lsRzFTVHVyVGZZWjNHa0lXV2tZMlJsNHBTcWdhYjJJYkE2TGZNWHFuaHdOV3Vya1habGhxL3FmUHNibEMKMFdHSTZiVUhOckF5NnI3OUV2Ull3UU8rWk9FVk1QYTZSOC9lUnRDQWxGWmg2R0RBV2pyRnZhSDRjd1k3SEJXVApmdCtjc2w1amJ2RDZyanM4SG85Q0cybnlXMXRqVG53bUpWRGlJa3R4YjZuSlF3MmprTGhGTDEreFRSajRETk9lCmxaMStKTmdGZGdReCswRS9PRk1aUGRXNE5CN0dSUk5kcEdldHZndmNyQzRTblFEd3Y4N24wQ24xeTREb2pIWEEKVXY5N0dON2k4RjdEeVlLZGNLRWt2aHFqc1Y3cEdBNmNQdnZPQlVlMVErMExaS1FsVzhCeG1NUHJHVkhnUnQ5SgpwWUhSQ25ISFFaZzZXVUNLRDZJZnR0aTRuQnN2QW5ia1VxOWtFMERDU3p2VFdTWnVNc0lSSS9LTE4zOXVBTEpVCkJ0cytKa0F0Y25wSHI2a0U5RGtSbStJZVRrY0NBd0VBQWFOQ01FQXdEZ1lEVlIwUEFRSC9CQVFEQWdJRU1BOEcKQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGTEFka29zejF3NVhCMVRncmhDRFFmcG8ySVBnTUEwRwpDU3FHU0liM0RRRUJDd1VBQTRJQmdRRE5PaWZ3YURFMlBYNWw3N2o5VmJLNWRBL2NWT0M3LzRnNU5iZ0hBZkhhClVtblFVVTh1WFhtMXpzdm5kLytFa0ZpUEZudCsyRUd0ZUxVYWJXbXh4VmxLNTIydENTRGtVcllmMnlQTWVTMHEKZjBPQk1sUmk3NG0rU0VQajlFeXpwUTdLdStMa1lkN0lsaS9HRWsweU9nNE5wOGV4T2pvZ2t5OFQ2Y2xObEx5Rgphc3RJaSthNHN6UVlzRis4ZVJNZHpWaDF2MDRSZVZzZjhmbzBaVmFhUTNNbllGZlhzZ05MUlMrK2xCaU5qTGg2CmlHTXYvUURieFR1TnQrOS9maEY2YVZtckQvdis5YXBwQy9mMTl2c2hIUHpubzlLUVh3TnNYZlpwVTNieHgwMS8KQklOWSs3NkJNZldDK1EzVTltTzc1QmZlVXR3T0VaODlwRW15a2UyVXlQWHY5UjQxVXM0aDR2UTFtQzJ3Qk5IeApUTEthTjhSd0o0L3c4Wmd0TndFa2JuRk1qSTlxa0tiTXZ5bGtrdXdpaEk1WVpNL2FZVEpQN1FTYTQ1WEdzQnlyCno1TTFWZ1ZTVUVrUVVlMm5XR2hRNWFId0YxeUkyMjFlSm0vZklySnpNWmhuQ0FxSGZuZU5oUFk2WUFGdEtINFIKWVVlSHNwbi8zcGZpSEo3N05CckZpOE09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+masterAuthorizedNetworksConfig: {}
+monitoringConfig:
+  advancedDatapathObservabilityConfig: {}
+  componentConfig:
+    enableComponents:
+    - SYSTEM_COMPONENTS
+    - STORAGE
+    - HPA
+    - POD
+    - DAEMONSET
+    - DEPLOYMENT
+    - STATEFULSET
+    - CADVISOR
+    - KUBELET
+    - DCGM
+    - JOBSET
+  managedPrometheusConfig:
+    enabled: true
+monitoringService: monitoring.googleapis.com/kubernetes
+name: sts-rollout-test
+network: default
+networkConfig:
+  network: projects/geoffanderson-gke-dev/global/networks/default
+  serviceExternalIpsConfig: {}
+  subnetwork: projects/geoffanderson-gke-dev/regions/us-central1/subnetworks/default
+nodeConfig:
+  bootDisk:
+    diskType: pd-balanced
+    sizeGb: '100'
+  diskSizeGb: 100
+  diskType: pd-balanced
+  effectiveCgroupMode: EFFECTIVE_CGROUP_MODE_V2
+  imageType: COS_CONTAINERD
+  kubeletConfig:
+    insecureKubeletReadonlyPortEnabled: false
+    maxParallelImagePulls: 2
+  machineType: e2-standard-4
+  metadata:
+    disable-legacy-endpoints: 'true'
+  nodeImageConfig:
+    image: gke-1355-gke1324000-cos-125-19216-395-7-c-pre
+    imageProject: gke-node-images
+  oauthScopes:
+  - https://www.googleapis.com/auth/devstorage.read_only
+  - https://www.googleapis.com/auth/logging.write
+  - https://www.googleapis.com/auth/monitoring
+  - https://www.googleapis.com/auth/service.management.readonly
+  - https://www.googleapis.com/auth/servicecontrol
+  - https://www.googleapis.com/auth/trace.append
+  resourceLabels:
+    goog-gke-node-pool-provisioning-model: on-demand
+  serviceAccount: default
+  shieldedInstanceConfig:
+    enableIntegrityMonitoring: true
+  windowsNodeConfig: {}
+  workloadMetadataConfig:
+    mode: GKE_METADATA
+nodeCreationConfig:
+  nodeCreationMode: VIA_KUBELET
+nodePoolAutoConfig:
+  nodeKubeletConfig:
+    insecureKubeletReadonlyPortEnabled: false
+nodePoolDefaults:
+  nodeConfigDefaults:
+    loggingConfig:
+      variantConfig:
+        variant: DEFAULT
+    nodeKubeletConfig:
+      insecureKubeletReadonlyPortEnabled: false
+nodePools:
+- config:
+    bootDisk:
+      diskType: pd-balanced
+      sizeGb: '100'
+    diskSizeGb: 100
+    diskType: pd-balanced
+    effectiveCgroupMode: EFFECTIVE_CGROUP_MODE_V2
+    imageType: COS_CONTAINERD
+    kubeletConfig:
+      insecureKubeletReadonlyPortEnabled: false
+      maxParallelImagePulls: 2
+    machineType: e2-standard-4
+    metadata:
+      disable-legacy-endpoints: 'true'
+    nodeImageConfig:
+      image: gke-1355-gke1324000-cos-125-19216-395-7-c-pre
+      imageProject: gke-node-images
+    oauthScopes:
+    - https://www.googleapis.com/auth/devstorage.read_only
+    - https://www.googleapis.com/auth/logging.write
+    - https://www.googleapis.com/auth/monitoring
+    - https://www.googleapis.com/auth/service.management.readonly
+    - https://www.googleapis.com/auth/servicecontrol
+    - https://www.googleapis.com/auth/trace.append
+    resourceLabels:
+      goog-gke-node-pool-provisioning-model: on-demand
+    serviceAccount: default
+    shieldedInstanceConfig:
+      enableIntegrityMonitoring: true
+    windowsNodeConfig: {}
+    workloadMetadataConfig:
+      mode: GKE_METADATA
+  etag: 5b293b4b-da37-40ef-8445-7496f4344e09
+  initialNodeCount: 5
+  instanceGroupUrls:
+  - https://www.googleapis.com/compute/v1/projects/geoffanderson-gke-dev/zones/us-central1-a/instanceGroupManagers/gke-sts-rollout-test-default-pool-d1b7f613-grp
+  locations:
+  - us-central1-a
+  management: {}
+  maxPodsConstraint:
+    maxPodsPerNode: '110'
+  name: default-pool
+  networkConfig:
+    networkTierConfig:
+      networkTier: NETWORK_TIER_DEFAULT
+    podIpv4CidrBlock: 10.12.0.0/14
+    podIpv4RangeUtilization: 0.0049
+    podRange: gke-sts-rollout-test-pods-907e81df
+    subnetwork: projects/geoffanderson-gke-dev/regions/us-central1/subnetworks/default
+  podIpv4CidrSize: 24
+  selfLink: https://container.googleapis.com/v1/projects/geoffanderson-gke-dev/zones/us-central1-a/clusters/sts-rollout-test/nodePools/default-pool
+  status: RUNNING
+  upgradeSettings:
+    maxSurge: 1
+    strategy: SURGE
+  version: 1.35.5-gke.1324000
+notificationConfig:
+  pubsub: {}
+podAutoscaling:
+  hpaProfile: PERFORMANCE
+privateClusterConfig:
+  privateEndpoint: 10.128.0.86
+  publicEndpoint: 34.29.4.126
+rbacBindingConfig:
+  enableInsecureBindingSystemAuthenticated: true
+  enableInsecureBindingSystemUnauthenticated: true
+securityPostureConfig:
+  mode: BASIC
+  vulnerabilityMode: VULNERABILITY_MODE_UNSPECIFIED
+selfLink: https://container.googleapis.com/v1/projects/geoffanderson-gke-dev/zones/us-central1-a/clusters/sts-rollout-test
+servicesIpv4Cidr: 34.118.224.0/20
+shieldedNodes:
+  enabled: true
+status: RUNNING
+subnetwork: default
+userManagedKeysConfig: {}
+workloadIdentityConfig:
+  workloadPool: geoffanderson-gke-dev.svc.id.goog
+zone: us-central1-a

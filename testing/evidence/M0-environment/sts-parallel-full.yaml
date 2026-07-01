@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apps/v1","kind":"StatefulSet","metadata":{"annotations":{},"labels":{"app":"test-sts","test-variant":"parallel-good"},"name":"test-sts","namespace":"default"},"spec":{"podManagementPolicy":"Parallel","replicas":115,"selector":{"matchLabels":{"app":"test-sts"}},"serviceName":"test-sts","template":{"metadata":{"labels":{"app":"test-sts"}},"spec":{"containers":[{"image":"nginx:1.27.0","name":"nginx","ports":[{"containerPort":80}],"readinessProbe":{"failureThreshold":3,"httpGet":{"path":"/","port":80},"initialDelaySeconds":2,"periodSeconds":3},"resources":{"limits":{"cpu":"50m","memory":"64Mi"},"requests":{"cpu":"10m","memory":"32Mi"}}}],"terminationGracePeriodSeconds":5}},"updateStrategy":{"rollingUpdate":{"maxUnavailable":"20%"},"type":"RollingUpdate"}}}
+  creationTimestamp: "2026-07-01T03:33:08Z"
+  generation: 1
+  labels:
+    app: test-sts
+    test-variant: parallel-good
+  name: test-sts
+  namespace: default
+  resourceVersion: "1782876812403519022"
+  uid: c766b236-0c4e-489a-98f0-972df54a34af
+spec:
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Retain
+    whenScaled: Retain
+  podManagementPolicy: Parallel
+  replicas: 115
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: test-sts
+  serviceName: test-sts
+  template:
+    metadata:
+      labels:
+        app: test-sts
+    spec:
+      containers:
+      - image: nginx:1.27.0
+        imagePullPolicy: IfNotPresent
+        name: nginx
+        ports:
+        - containerPort: 80
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 80
+            scheme: HTTP
+          initialDelaySeconds: 2
+          periodSeconds: 3
+          successThreshold: 1
+          timeoutSeconds: 1
+        resources:
+          limits:
+            cpu: 50m
+            memory: 64Mi
+          requests:
+            cpu: 10m
+            memory: 32Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 5
+  updateStrategy:
+    rollingUpdate:
+      partition: 0
+    type: RollingUpdate
+status:
+  availableReplicas: 115
+  collisionCount: 0
+  currentReplicas: 115
+  currentRevision: test-sts-6bcfc99b5c
+  observedGeneration: 1
+  readyReplicas: 115
+  replicas: 115
+  updateRevision: test-sts-6bcfc99b5c
+  updatedReplicas: 115

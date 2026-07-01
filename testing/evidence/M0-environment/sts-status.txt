@@ -1,0 +1,4 @@
+NAME       READY     AGE    CONTAINERS   IMAGES
+test-sts   115/115   113s   nginx        nginx:1.27.0
+NAME               READY   AGE   CONTAINERS   IMAGES
+test-sts-ordered   10/10   83s   nginx        nginx:1.27.0

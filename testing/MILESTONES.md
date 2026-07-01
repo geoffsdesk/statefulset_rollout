@@ -1,10 +1,10 @@
 # Milestone Tracker — StatefulSet Partition Stepping Workaround Verification
 
 **Guide under test:** `customer-workaround-guide.md`
-**Test date:** _(fill on execution)_
-**Tester:** _(fill on execution)_
-**Cluster:** _(fill on execution)_
-**GKE version:** _(fill on execution)_
+**Test date:** 2026-07-01
+**Tester:** geoffanderson
+**Cluster:** sts-rollout-test (us-central1-a)
+**GKE version:** 1.35.5-gke.1324000
 
 ---
 
@@ -23,11 +23,11 @@
 ## Milestones
 
 ### M0: Test Environment Provisioning & Baseline
-- [ ] GKE 1.35.x Standard cluster provisioned
-- [ ] 115-replica Parallel StatefulSet deployed and all pods Ready
-- [ ] Negative-control OrderedReady StatefulSet deployed
-- [ ] All manifests committed to `testing/manifests/`
-- [ ] Evidence captured to `testing/evidence/M0-environment/`
+- [x] GKE 1.35.x Standard cluster provisioned (1.35.5-gke.1324000, 5x e2-standard-4)
+- [x] 115-replica Parallel StatefulSet deployed and all pods Ready (115/115)
+- [x] Negative-control OrderedReady StatefulSet deployed (10/10)
+- [x] All manifests committed to `testing/manifests/`
+- [x] Evidence captured to `testing/evidence/M0-environment/`
 - [ ] **Sign-off:** [ ]
 
 ### M1: Regression Confirmation

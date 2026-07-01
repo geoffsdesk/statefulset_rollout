@@ -1,0 +1,20 @@
+=== SC-0.1: GKE Version ===
+Master version: 1.35.5-gke.1324000
+Node version: 1.35.5-gke.1324000
+Autopilot: 
+VERDICT: PASS (GKE 1.35.x Standard)
+
+=== SC-0.2: Parallel Policy + 115 Ready ===
+podManagementPolicy: Parallel
+replicas: 115
+readyReplicas: 115
+VERDICT: PASS (115/115 Ready, Parallel)
+
+=== SC-0.3: Manifests committed ===
+/home/geoffanderson/statefulset_rollout/testing/manifests/pdb-zero-unavailable.yaml
+/home/geoffanderson/statefulset_rollout/testing/manifests/rbac-restricted.yaml
+/home/geoffanderson/statefulset_rollout/testing/manifests/sts-ondelete.yaml
+/home/geoffanderson/statefulset_rollout/testing/manifests/sts-ordered-ready.yaml
+/home/geoffanderson/statefulset_rollout/testing/manifests/sts-parallel-115.yaml
+/home/geoffanderson/statefulset_rollout/testing/manifests/sts-with-pvcs.yaml
+VERDICT: PASS
