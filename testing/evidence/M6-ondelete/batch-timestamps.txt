@@ -1,0 +1,31 @@
+=== Pod Creation Timestamps for test-sts-ondelete pods 92-114 ===
+Captured at: 2026-07-01T04:14:57Z
+---
+test-sts-ondelete-92  2026-07-01T04:14:35Z
+test-sts-ondelete-93  2026-07-01T04:14:36Z
+test-sts-ondelete-94  2026-07-01T04:14:35Z
+test-sts-ondelete-95  2026-07-01T04:14:35Z
+test-sts-ondelete-96  2026-07-01T04:14:35Z
+test-sts-ondelete-97  2026-07-01T04:14:36Z
+test-sts-ondelete-98  2026-07-01T04:14:37Z
+test-sts-ondelete-99  2026-07-01T04:14:37Z
+test-sts-ondelete-100  2026-07-01T04:14:36Z
+test-sts-ondelete-101  2026-07-01T04:14:37Z
+test-sts-ondelete-102  2026-07-01T04:14:38Z
+test-sts-ondelete-103  2026-07-01T04:14:38Z
+test-sts-ondelete-104  2026-07-01T04:14:38Z
+test-sts-ondelete-105  2026-07-01T04:14:38Z
+test-sts-ondelete-106  2026-07-01T04:14:39Z
+test-sts-ondelete-107  2026-07-01T04:14:38Z
+test-sts-ondelete-108  2026-07-01T04:14:39Z
+test-sts-ondelete-109  2026-07-01T04:14:39Z
+test-sts-ondelete-110  2026-07-01T04:14:39Z
+test-sts-ondelete-111  2026-07-01T04:14:39Z
+test-sts-ondelete-112  2026-07-01T04:14:39Z
+test-sts-ondelete-113  2026-07-01T04:14:42Z
+test-sts-ondelete-114  2026-07-01T04:14:40Z
+---
+Earliest: 2026-07-01T04:14:35Z
+Latest:   2026-07-01T04:14:42Z
+Max spread: 7s
+VERDICT: LIKELY PARALLEL with staggering (spread <= 30s)

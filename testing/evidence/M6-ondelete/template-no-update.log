@@ -1,0 +1,5 @@
+=== SC-6.1: OnDelete template update ===
+statefulset.apps/test-sts-ondelete image updated
+Waiting 30s...
+Pods on new image after 30s wait: 0/115 (should be 0)
+VERDICT: PASS — OnDelete does NOT auto-update pods

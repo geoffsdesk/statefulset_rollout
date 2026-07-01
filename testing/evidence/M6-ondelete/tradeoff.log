@@ -1,0 +1,7 @@
+=== Trade-off test: incidental pod deletion during partial rollout ===
+Pods 92-114 are on 1.27.1 (new), pods 0-91 are on 1.27.0 (old)
+Deleting pod test-sts-ondelete-50 (below batch boundary)...
+pod "test-sts-ondelete-50" deleted from default namespace
+Pod 50 recreated on image: nginx:1.27.1
+VERDICT: CONFIRMED — OnDelete recreates incidental deletions on NEW revision (wider blast radius)
+This matches the guide's trade-off warning in Section 0.6

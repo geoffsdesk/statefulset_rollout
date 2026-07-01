@@ -87,11 +87,11 @@
 - [ ] **Sign-off:** [ ]
 
 ### M6: OnDelete Alternative Path (Section 0.6)
-- [ ] OnDelete + Parallel StatefulSet: template update produces zero auto-updates
-- [ ] Deleted batch recreates in parallel on new revision
-- [ ] Full rollout completes successfully
-- [ ] Trade-off test: incidental pod deletion returns on new revision (wider blast radius)
-- [ ] Evidence captured to `testing/evidence/M6-ondelete/`
+- [x] OnDelete + Parallel StatefulSet: 0/115 pods auto-updated after 30s wait
+- [x] Deleted batch (92-114) recreated in parallel (7s spread), all on new image
+- [ ] Full rollout: _(tested batch 1 only — sufficient to validate mechanism)_
+- [x] Trade-off test: pod 50 (below batch) came back on NEW revision — confirms wider blast radius
+- [x] Evidence captured to `testing/evidence/M6-ondelete/`
 - [ ] **Sign-off:** [ ]
 
 ### M7: Independent Cold-Reader Walkthrough
