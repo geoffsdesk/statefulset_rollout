@@ -1,4 +1,4 @@
-# Customer Workaround Guide: StatefulSet Parallel Rollouts via Partition Stepping
+# Workaround Guide: StatefulSet Parallel Rollouts via Partition Stepping
 
 ---
 
@@ -183,9 +183,9 @@ Re-enablement at 1.37 follows upstream, but whether GKE keeps a beta gate on at 
 
 ## 1. Context & Background
 
-Following the upgrade of your GKE control plane to GKE v1.35.5 (or any v1.35+ release), you may have observed a severe degradation in rollout velocity for your 115-replica `tinker-inference-dispatcher` StatefulSet. Despite having `podManagementPolicy: Parallel` and `spec.updateStrategy.rollingUpdate.maxUnavailable: 20%` (23 pods) configured, the StatefulSet updates only **one pod at a time**.
+Following the upgrade of your GKE control plane to GKE v1.35.5 (or any v1.35+ release), you may observe a severe degradation in rollout velocity for StatefulSets configured with `podManagementPolicy: Parallel` and `spec.updateStrategy.rollingUpdate.maxUnavailable`. Despite having `maxUnavailable` set (e.g. 20%), the StatefulSet updates only **one pod at a time**.
 
-This regression causes deployment times to escalate from minutes to **~4 hours**, severely impacting your operational velocity, CI/CD pipelines, and ability to ship updates to your production AI workload (`tml-tinker-prod`).
+This regression causes deployment times to escalate from minutes to potentially **hours** for large StatefulSets, severely impacting operational velocity and CI/CD pipelines.
 
 ### Why did this happen?
 
@@ -199,7 +199,7 @@ Although GKE supports a node-to-control-plane version skew of up to two minor ve
 
 ## 2. The Solution: Partition Stepping + Targeted Deletions
 
-To restore fast, parallel deployments immediately without waiting for a platform upgrade, you can leverage native **Kubernetes Partitioned StatefulSet Updates** combined with **targeted concurrent Pod deletions**.
+This workload-layer workaround restores fast, parallel deployments immediately using native Kubernetes primitives, without requiring a platform upgrade or introducing additional feature risk to your fleet. It leverages **Partitioned StatefulSet Updates** combined with **targeted concurrent Pod deletions**.
 
 ### How the Workaround Works
 
@@ -261,7 +261,7 @@ Before deploying your update, modify your StatefulSet manifest to set the partit
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: tinker-inference-dispatcher
+  name: <name>
   namespace: default
 spec:
   replicas: 115
@@ -273,8 +273,8 @@ spec:
   template:
     spec:
       containers:
-      - name: tinker-inference-dispatcher
-        image: gcr.io/your-project/tinker-inference-dispatcher:v2.0.0  # New Image
+      - name: <name>
+        image: <registry/image:new-tag>  # Your new image
 ```
 
 Apply this manifest:
@@ -283,27 +283,27 @@ Apply this manifest:
 kubectl apply -f statefulset.yaml
 ```
 
-**Verification:** Run `kubectl get statefulset tinker-inference-dispatcher` and verify that the `UPDATE REVISION` has changed, but all 115 pods remain running on the old version.
+**Verification:** Run `kubectl get statefulset <name>` and verify that the `UPDATE REVISION` has changed, but all 115 pods remain running on the old version.
 
 ### Step 2: Roll Out Batch 1 (Pods 92–114)
 
 Decrease the partition to 92:
 
 ```bash
-kubectl patch statefulset tinker-inference-dispatcher \
+kubectl patch statefulset <name> \
   -p '{"spec":{"updateStrategy":{"rollingUpdate":{"partition":92}}}}'
 ```
 
 Delete pods 92 through 114 concurrently:
 
 ```bash
-kubectl delete pods $(seq -f "tinker-inference-dispatcher-%g" 92 114)
+kubectl delete pods $(seq -f "<name>-%g" 92 114)
 ```
 
 **Monitor Health:** Wait for all pods with index >= 92 to become `Running` and `Ready`.
 
 ```bash
-kubectl get pods -l app=tinker-inference-dispatcher
+kubectl get pods -l app=<name>
 ```
 
 ### Step 3: Repeat for Remaining Batches
@@ -597,7 +597,7 @@ Executing manual pod deletions on a large-scale production workload introduces s
 | **Pod Disruption Budget (PDB) Bypass** | Direct pod deletion via `kubectl delete pod` **bypasses the Kubernetes Eviction API**. This means any active PDB will **not** block or delay the deletion, potentially violating your availability guarantees if node failures occur simultaneously. | **Lock out maintenance**: Disable or pause GKE Node Auto-Upgrades during the rollout. **Coordinate**: Ensure no other teams are draining nodes, running cluster maintenance, or performing autoscaling operations simultaneously. **Maintenance Window**: Execute rollouts during lower-traffic windows. |
 | **Graceful Termination & SIGTERM** | Deleting 23 pods concurrently immediately shifts their traffic load to the remaining 92 pods and triggers rapid endpoint propagation. | **Graceful Shutdown**: Ensure your application handles SIGTERM correctly: stop accepting new requests, drain in-flight work, and exit cleanly within `terminationGracePeriodSeconds` (default: 30s). **Endpoint Propagation**: Verify your ingress, load balancer, or service mesh propagates endpoint removals quickly to prevent routing traffic to terminating pods. **PreStop Hook**: If you experience traffic drop during batch deletion, add a `preStop` lifecycle hook with a short sleep (e.g., `sleep 5` or `sleep 10`) to allow load balancer endpoints to propagate before the container receives SIGTERM. |
 | **Failed Rollouts (Split-State)** | If the new image has a startup crash or health check bug, the rollout will stall, leaving the cluster running two different versions (split-state). | **Automated Safety**: The provided script has a rollback trap. If a batch fails to become ready within the timeout, it automatically patches the partition back to 115, locking the rollout. You can then safely redeploy the old version to revert the updated pods. |
-| **StatefulSet Volume Retention** | Under Parallel management, deleting pods does not delete their Persistent Volume Claims (PVCs), which is expected. | **Verify PVC Mounts**: Ensure that newly recreated pods successfully re-attach to their existing PVs. Under high parallel recreation, Colossus PV attaches may experience minor latency; the script's health check will wait for these to resolve. |
+| **StatefulSet Volume Retention** | Under Parallel management, deleting pods does not delete their Persistent Volume Claims (PVCs), which is expected. | **Verify PVC Mounts**: Ensure that newly recreated pods successfully re-attach to their existing PVs. Under high parallel recreation, cloud PV attaches may experience minor latency; the script's health check will wait for these to resolve. |
 
 ---
 
