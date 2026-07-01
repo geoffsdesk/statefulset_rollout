@@ -1,0 +1,3 @@
+=== SC-2.5: RBAC restricted (should show denied permissions) ===
+[RBAC check] can patch sts: no
+[RBAC check] can delete pods: no

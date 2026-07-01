@@ -39,14 +39,14 @@
 - [ ] **Sign-off:** [ ]
 
 ### M2: Pre-flight Script Validation
-- [ ] `preflight.sh` extracted to `testing/scripts/`
-- [ ] Known-good StatefulSet: all [PASS]
-- [ ] Known-bad (OrderedReady): [FAIL] on podManagementPolicy
-- [ ] OnDelete strategy: [WARN] on updateStrategy
-- [ ] PVC StatefulSet: [WARN] on volumeClaimTemplates
-- [ ] RBAC restricted SA: correct permission reporting
-- [ ] Non-existent StatefulSet: graceful error
-- [ ] Evidence captured to `testing/evidence/M2-preflight/`
+- [x] `preflight.sh` extracted to `testing/scripts/`
+- [x] Known-good StatefulSet: all [PASS] (5 PASS, 0 FAIL, 0 WARN)
+- [x] Known-bad (OrderedReady): [FAIL] on podManagementPolicy
+- [x] OnDelete strategy: [WARN] on updateStrategy
+- [x] PVC StatefulSet: [WARN] on volumeClaimTemplates (PVC name: data)
+- [x] RBAC restricted SA: correctly reports `no` for patch/delete
+- [x] Non-existent StatefulSet: exits cleanly (exit 0), reports [FAIL] and [WARN] appropriately
+- [x] Evidence captured to `testing/evidence/M2-preflight/`
 - [ ] **Sign-off:** [ ]
 
 ### M3: Manual Procedure Validation (Section 3)

@@ -1,0 +1,14 @@
+
+=== SC-2.3: OnDelete (should WARN) ===
+Pre-flight check for StatefulSet 'test-sts-ondelete' in namespace 'default'
+============================================================
+[PASS] podManagementPolicy = Parallel
+[WARN] updateStrategy.type = OnDelete -> use the OnDelete variant (0.6); partition steps do not apply
+[PASS] ordinals.start = 0 (pods are test-sts-ondelete-0 .. N-1)
+[INFO] replicas = 115 (guide batch math assumes this is N)
+[INFO] field managers: kubectl-client-side-apply
+  -> if argocd/configsync/flux/kustomize-controller appears, PAUSE GitOps first (Section 0.3)
+[PASS] no volumeClaimTemplates (no Persistent Disk attach risk)
+[INFO] can patch sts: yes
+[INFO] can delete pods: yes
+[PASS] Readiness probe is configured

@@ -1,0 +1,14 @@
+=== SC-2.6: Non-existent StatefulSet ===
+Pre-flight check for StatefulSet 'does-not-exist' in namespace 'default'
+============================================================
+[FAIL] podManagementPolicy = OrderedReady -> IMMUTABLE: recreate the StatefulSet (Section 0.1)
+[PASS] updateStrategy.type = RollingUpdate
+[PASS] ordinals.start = 0 (pods are does-not-exist-0 .. N-1)
+[INFO] replicas = unknown (guide batch math assumes this is N)
+[INFO] field managers: none
+  -> if argocd/configsync/flux/kustomize-controller appears, PAUSE GitOps first (Section 0.3)
+[PASS] no volumeClaimTemplates (no Persistent Disk attach risk)
+[INFO] can patch sts: yes
+[INFO] can delete pods: yes
+[WARN] No readiness probe configured! Script health checks may be unreliable (Section 0.2)
+Exit code: 0

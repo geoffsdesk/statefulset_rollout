@@ -1,0 +1,13 @@
+=== SC-2.1: Known-good (Parallel, RollingUpdate) ===
+Pre-flight check for StatefulSet 'test-sts' in namespace 'default'
+============================================================
+[PASS] podManagementPolicy = Parallel
+[PASS] updateStrategy.type = RollingUpdate
+[PASS] ordinals.start = 0 (pods are test-sts-0 .. N-1)
+[INFO] replicas = 115 (guide batch math assumes this is N)
+[INFO] field managers: kube-controller-manager,kubectl-client-side-apply,kubectl-patch,kubectl-set
+  -> if argocd/configsync/flux/kustomize-controller appears, PAUSE GitOps first (Section 0.3)
+[PASS] no volumeClaimTemplates (no Persistent Disk attach risk)
+[INFO] can patch sts: yes
+[INFO] can delete pods: yes
+[PASS] Readiness probe is configured
