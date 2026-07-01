@@ -1,0 +1,6 @@
+=== SC-5.3: Post-rollback state ===
+Partition: 115
+Pods on last-good image (1.27.1): 92
+Pods on bad image: 23
+Pods below partition (0-91) should be on 1.27.1, pods 92-114 on bad image
+VERDICT: PASS — partition reset to 115, pods below partition preserved on last-good image

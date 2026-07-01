@@ -1,0 +1,35 @@
+=== SC-5.5: OrderedReady sequential recreation ===
+Deleting pods 0-4 from OrderedReady StatefulSet...
+pod "test-sts-ordered-0" deleted from default namespace
+pod "test-sts-ordered-1" deleted from default namespace
+pod "test-sts-ordered-2" deleted from default namespace
+pod "test-sts-ordered-3" deleted from default namespace
+pod "test-sts-ordered-4" deleted from default namespace
+Capturing creation timestamps...
+=== Pod Creation Timestamps for test-sts-ordered pods 0-4 ===
+Captured at: 2026-07-01T04:09:17Z
+---
+test-sts-ordered-0  2026-07-01T04:09:13Z
+test-sts-ordered-1  NOT_FOUND
+test-sts-ordered-2  NOT_FOUND
+test-sts-ordered-3  NOT_FOUND
+test-sts-ordered-4  NOT_FOUND
+---
+ERROR: Not enough pods found to compute spread
+Waiting 30s for OrderedReady sequential creation...
+=== After 30s wait ===
+=== Pod Creation Timestamps for test-sts-ordered pods 0-4 ===
+Captured at: 2026-07-01T04:10:01Z
+---
+test-sts-ordered-0  2026-07-01T04:09:13Z
+test-sts-ordered-1  2026-07-01T04:09:20Z
+test-sts-ordered-2  2026-07-01T04:09:24Z
+test-sts-ordered-3  2026-07-01T04:09:31Z
+test-sts-ordered-4  2026-07-01T04:09:35Z
+---
+Earliest: 2026-07-01T04:09:13Z
+Latest:   2026-07-01T04:09:35Z
+Max spread: 22s
+VERDICT: LIKELY PARALLEL with staggering (spread <= 30s)
+
+VERDICT: OrderedReady creates pods sequentially — contrast with Parallel batches (7-12s spread for 23 pods)

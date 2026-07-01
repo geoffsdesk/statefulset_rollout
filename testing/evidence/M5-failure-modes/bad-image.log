@@ -1,0 +1,134 @@
+=== SC-5.1: Bad image rollback ===
+Deploying non-existent image to trigger rollback...
+[2026-07-01T04:07:15] Starting pre-flight validation...
+[2026-07-01T04:07:15] Found StatefulSet 'test-sts' with 115 replicas.
+[2026-07-01T04:07:16] Locking rollout at partition=115 and applying new image: nginx:does-not-exist-9999...
+statefulset.apps/test-sts patched
+[2026-07-01T04:07:22] ---------------------------------------------------------------------------
+[2026-07-01T04:07:22] Processing Batch: Pods 92 to 114
+[2026-07-01T04:07:22] ---------------------------------------------------------------------------
+[2026-07-01T04:07:22] Updating partition to 92...
+statefulset.apps/test-sts patched
+[2026-07-01T04:07:23] Deleting pods concurrently: test-sts-92 test-sts-93 test-sts-94 test-sts-95 test-sts-96 test-sts-97 test-sts-98 test-sts-99 test-sts-100 test-sts-101 test-sts-102 test-sts-103 test-sts-104 test-sts-105 test-sts-106 test-sts-107 test-sts-108 test-sts-109 test-sts-110 test-sts-111 test-sts-112 test-sts-113 test-sts-114
+pod "test-sts-92" deleted from default namespace
+pod "test-sts-93" deleted from default namespace
+pod "test-sts-94" deleted from default namespace
+pod "test-sts-95" deleted from default namespace
+pod "test-sts-96" deleted from default namespace
+pod "test-sts-97" deleted from default namespace
+pod "test-sts-98" deleted from default namespace
+pod "test-sts-99" deleted from default namespace
+pod "test-sts-100" deleted from default namespace
+pod "test-sts-101" deleted from default namespace
+pod "test-sts-102" deleted from default namespace
+pod "test-sts-103" deleted from default namespace
+pod "test-sts-104" deleted from default namespace
+pod "test-sts-105" deleted from default namespace
+pod "test-sts-106" deleted from default namespace
+pod "test-sts-107" deleted from default namespace
+pod "test-sts-108" deleted from default namespace
+pod "test-sts-109" deleted from default namespace
+pod "test-sts-110" deleted from default namespace
+pod "test-sts-111" deleted from default namespace
+pod "test-sts-112" deleted from default namespace
+pod "test-sts-113" deleted from default namespace
+pod "test-sts-114" deleted from default namespace
+[2026-07-01T04:07:32] Waiting for batch to become healthy...
+[2026-07-01T04:07:33]   -> Pod test-sts-92 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-93 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-94 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-95 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-96 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-97 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-98 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-99 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-100 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-101 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-102 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-103 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-104 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-105 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-106 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-107 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-108 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-109 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-110 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-111 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-112 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-113 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:33]   -> Pod test-sts-114 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-92 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-93 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-94 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-95 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-96 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-97 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-98 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-99 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-100 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-101 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-102 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-103 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-104 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-105 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-106 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-107 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-108 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-109 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-110 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-111 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-112 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-113 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:44]   -> Pod test-sts-114 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-92 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-93 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-94 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-95 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-96 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-97 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-98 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-99 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-100 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-101 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-102 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-103 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-104 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-105 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-106 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-107 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-108 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-109 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-110 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-111 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-112 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-113 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:07:55]   -> Pod test-sts-114 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-92 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-93 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-94 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-95 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-96 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-97 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-98 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-99 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-100 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-101 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-102 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-103 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-104 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-105 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-106 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-107 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-108 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-109 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-110 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-111 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-112 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-113 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06]   -> Pod test-sts-114 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:08:06] ERROR: Timeout waiting for batch to become healthy.
+[2026-07-01T04:08:06] WARNING: Rollout failed! Resetting partition to 115 to lock rollout.
+statefulset.apps/test-sts patched
+
+Exit code: 0
+Partition after rollback: 115

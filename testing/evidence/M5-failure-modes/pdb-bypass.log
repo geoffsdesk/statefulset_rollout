@@ -1,0 +1,11 @@
+=== SC-5.4: PDB bypass test ===
+poddisruptionbudget.policy/test-sts-pdb created
+PDB created with maxUnavailable: 0
+NAME           MIN AVAILABLE   MAX UNAVAILABLE   ALLOWED DISRUPTIONS   AGE
+test-sts-pdb   N/A             0                 0                     1s
+
+Attempting to delete pod test-sts-100 (should succeed despite PDB)...
+pod "test-sts-100" deleted from default namespace
+Exit code: 0
+
+VERDICT: kubectl delete bypasses PDB (eviction API would honor it)

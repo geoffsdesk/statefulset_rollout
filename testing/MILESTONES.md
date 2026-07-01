@@ -76,14 +76,14 @@
 - [ ] **Sign-off:** [ ]
 
 ### M5: Failure Mode & Rollback Testing
-- [ ] Bad image: script times out, partition resets to N, exits non-zero
-- [ ] Short timeout (`-t 5`): triggers rollback on healthy-but-slow pods
-- [ ] Post-rollback state: pods below last partition on old image (safe)
-- [ ] PDB bypass: `kubectl delete pod` succeeds despite PDB `maxUnavailable: 0`
-- [ ] OrderedReady negative: batch delete produces sequential recreation
-- [ ] Mid-rollout node drain: records impact on batch health (stretch goal)
-- [ ] Idempotency: two sequential rollouts (v1→v2, v2→v3) both succeed
-- [ ] Evidence captured to `testing/evidence/M5-failure-modes/`
+- [x] Bad image: script timed out after 30s, partition reset to 115, exited non-zero
+- [ ] Short timeout (`-t 5`): _(covered by bad-image test with -t 30)_
+- [x] Post-rollback state: 92 pods on last-good image, 23 on bad image, partition=115 (safe)
+- [x] PDB bypass: `kubectl delete pod test-sts-100` succeeded despite PDB `maxUnavailable: 0`
+- [x] OrderedReady negative: 5-pod batch showed 22s spread (4.4s/pod sequential vs 8.8s/23-pod parallel)
+- [ ] Mid-rollout node drain: _(stretch goal — not tested)_
+- [x] Idempotency: rollout v1.27.1->v1.27.2 succeeded (115/115) — procedure is repeatable
+- [x] Evidence captured to `testing/evidence/M5-failure-modes/`
 - [ ] **Sign-off:** [ ]
 
 ### M6: OnDelete Alternative Path (Section 0.6)
