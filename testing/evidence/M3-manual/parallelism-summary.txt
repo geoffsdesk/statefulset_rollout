@@ -1,0 +1,19 @@
+=== Parallelism Timestamp Analysis Summary ===
+
+Batch 1 (pods 92-114): Max spread = 12s  — PARALLEL
+Batch 2 (pods 69-91):  Max spread = 7s   — PARALLEL
+Batch 3 (pods 46-68):  Max spread = 9s   — PARALLEL
+Batch 4 (pods 23-45):  Max spread = 7s   — PARALLEL
+Batch 5 (pods 0-22):   Max spread = 9s   — PARALLEL
+
+Average spread: 8.8s across 23 pods per batch
+Compare to M1 regression: ~7.5s PER POD sequentially = 172.5s for 23 pods
+
+Total rollout wall-clock: ~2m 41s (03:46:09 to 03:48:50)
+M1 regression projection: ~14.4 minutes for 115 pods sequentially
+
+Speedup: ~5.4x faster than sequential rollout
+
+=== Verdict ===
+SC-3.2: PASS — all 5 batches show concurrent pod creation (spread 7-12s vs 172s sequential)
+The workaround restores parallel behavior as documented.

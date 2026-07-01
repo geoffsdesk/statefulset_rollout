@@ -1,0 +1,4 @@
+=== SC-3.1: Partition lock test ===
+After applying new template with partition=115:
+Pods on new image (nginx:1.27.1): 0/115
+VERDICT: PASS — partition=115 prevents all automatic updates

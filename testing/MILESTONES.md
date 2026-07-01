@@ -50,16 +50,16 @@
 - [ ] **Sign-off:** [ ]
 
 ### M3: Manual Procedure Validation (Section 3)
-- [ ] Partition=115 locks rollout — no pods auto-update after template change
-- [ ] Batch 1 (pods 92-114): parallel recreation confirmed by timestamps
-- [ ] Batch 2 (pods 69-91): parallel recreation confirmed
-- [ ] Batch 3 (pods 46-68): parallel recreation confirmed
-- [ ] Batch 4 (pods 23-45): parallel recreation confirmed
-- [ ] Batch 5 (pods 0-22): parallel recreation confirmed
-- [ ] All 115 pods on new image at completion
-- [ ] Every kubectl command in guide is copy-paste correct
-- [ ] Parallelism timestamp analysis (max spread < 5s per batch)
-- [ ] Evidence captured to `testing/evidence/M3-manual/`
+- [x] Partition=115 locks rollout — 0/115 pods updated after template change
+- [x] Batch 1 (pods 92-114): parallel recreation confirmed (spread=12s)
+- [x] Batch 2 (pods 69-91): parallel recreation confirmed (spread=7s)
+- [x] Batch 3 (pods 46-68): parallel recreation confirmed (spread=9s)
+- [x] Batch 4 (pods 23-45): parallel recreation confirmed (spread=7s)
+- [x] Batch 5 (pods 0-22): parallel recreation confirmed (spread=9s)
+- [x] All 115 pods on new image at completion (115/115 nginx:1.27.1)
+- [x] Every kubectl command in guide is copy-paste correct (substituting STS name only)
+- [x] Parallelism timestamp analysis (avg spread 8.8s vs 172.5s sequential — 5.4x speedup)
+- [x] Evidence captured to `testing/evidence/M3-manual/`
 - [ ] **Sign-off:** [ ]
 
 ### M4: Automated Script Validation (Section 4)

@@ -1,0 +1,31 @@
+=== Pod Creation Timestamps for test-sts pods 23-45 ===
+Captured at: 2026-07-01T03:48:20Z
+---
+test-sts-23  2026-07-01T03:48:06Z
+test-sts-24  2026-07-01T03:48:06Z
+test-sts-25  2026-07-01T03:48:06Z
+test-sts-26  2026-07-01T03:48:07Z
+test-sts-27  2026-07-01T03:48:07Z
+test-sts-28  2026-07-01T03:48:11Z
+test-sts-29  2026-07-01T03:48:08Z
+test-sts-30  2026-07-01T03:48:09Z
+test-sts-31  2026-07-01T03:48:10Z
+test-sts-32  2026-07-01T03:48:12Z
+test-sts-33  2026-07-01T03:48:08Z
+test-sts-34  2026-07-01T03:48:10Z
+test-sts-35  2026-07-01T03:48:11Z
+test-sts-36  2026-07-01T03:48:11Z
+test-sts-37  2026-07-01T03:48:10Z
+test-sts-38  2026-07-01T03:48:10Z
+test-sts-39  2026-07-01T03:48:11Z
+test-sts-40  2026-07-01T03:48:11Z
+test-sts-41  2026-07-01T03:48:12Z
+test-sts-42  2026-07-01T03:48:12Z
+test-sts-43  2026-07-01T03:48:12Z
+test-sts-44  2026-07-01T03:48:13Z
+test-sts-45  2026-07-01T03:48:13Z
+---
+Earliest: 2026-07-01T03:48:06Z
+Latest:   2026-07-01T03:48:13Z
+Max spread: 7s
+VERDICT: LIKELY PARALLEL with staggering (spread <= 30s)

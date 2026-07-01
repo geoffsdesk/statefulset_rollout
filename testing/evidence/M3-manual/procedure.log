@@ -1,0 +1,150 @@
+=== M3: Manual Procedure Validation ===
+Started: 2026-07-01T03:45:45Z
+StatefulSet: test-sts, 115 replicas, nginx:1.27.0
+
+--- Step 1: Lock partition at 115, apply nginx:1.27.1 ---
+statefulset.apps/test-sts patched
+
+--- Verification: partition=115 should prevent all updates ---
+Partition: 115
+Pods on new image: 0/115 (should be 0)
+=== Batch 1: Partition 92, pods 92-114 ===
+Time: 2026-07-01T03:46:09Z
+statefulset.apps/test-sts patched
+pod "test-sts-92" deleted from default namespace
+pod "test-sts-93" deleted from default namespace
+pod "test-sts-94" deleted from default namespace
+pod "test-sts-95" deleted from default namespace
+pod "test-sts-96" deleted from default namespace
+pod "test-sts-97" deleted from default namespace
+pod "test-sts-98" deleted from default namespace
+pod "test-sts-99" deleted from default namespace
+pod "test-sts-100" deleted from default namespace
+pod "test-sts-101" deleted from default namespace
+pod "test-sts-102" deleted from default namespace
+pod "test-sts-103" deleted from default namespace
+pod "test-sts-104" deleted from default namespace
+pod "test-sts-105" deleted from default namespace
+pod "test-sts-106" deleted from default namespace
+pod "test-sts-107" deleted from default namespace
+pod "test-sts-108" deleted from default namespace
+pod "test-sts-109" deleted from default namespace
+pod "test-sts-110" deleted from default namespace
+pod "test-sts-111" deleted from default namespace
+pod "test-sts-112" deleted from default namespace
+pod "test-sts-113" deleted from default namespace
+pod "test-sts-114" deleted from default namespace
+Batch 1 complete
+Pods >=92 on new image: 23/23
+Pods <92 on old image: 92/92
+=== Batch 2: Partition 69, pods 69-91 ===
+Time: 2026-07-01T03:47:03Z
+statefulset.apps/test-sts patched
+pod "test-sts-69" deleted from default namespace
+pod "test-sts-70" deleted from default namespace
+pod "test-sts-71" deleted from default namespace
+pod "test-sts-72" deleted from default namespace
+pod "test-sts-73" deleted from default namespace
+pod "test-sts-74" deleted from default namespace
+pod "test-sts-75" deleted from default namespace
+pod "test-sts-76" deleted from default namespace
+pod "test-sts-77" deleted from default namespace
+pod "test-sts-78" deleted from default namespace
+pod "test-sts-79" deleted from default namespace
+pod "test-sts-80" deleted from default namespace
+pod "test-sts-81" deleted from default namespace
+pod "test-sts-82" deleted from default namespace
+pod "test-sts-83" deleted from default namespace
+pod "test-sts-84" deleted from default namespace
+pod "test-sts-85" deleted from default namespace
+pod "test-sts-86" deleted from default namespace
+pod "test-sts-87" deleted from default namespace
+pod "test-sts-88" deleted from default namespace
+pod "test-sts-89" deleted from default namespace
+pod "test-sts-90" deleted from default namespace
+pod "test-sts-91" deleted from default namespace
+Batch 2 complete
+=== Batch 3: Partition 46, pods 46-68 ===
+Time: 2026-07-01T03:47:33Z
+statefulset.apps/test-sts patched
+pod "test-sts-46" deleted from default namespace
+pod "test-sts-47" deleted from default namespace
+pod "test-sts-48" deleted from default namespace
+pod "test-sts-49" deleted from default namespace
+pod "test-sts-50" deleted from default namespace
+pod "test-sts-51" deleted from default namespace
+pod "test-sts-52" deleted from default namespace
+pod "test-sts-53" deleted from default namespace
+pod "test-sts-54" deleted from default namespace
+pod "test-sts-55" deleted from default namespace
+pod "test-sts-56" deleted from default namespace
+pod "test-sts-57" deleted from default namespace
+pod "test-sts-58" deleted from default namespace
+pod "test-sts-59" deleted from default namespace
+pod "test-sts-60" deleted from default namespace
+pod "test-sts-61" deleted from default namespace
+pod "test-sts-62" deleted from default namespace
+pod "test-sts-63" deleted from default namespace
+pod "test-sts-64" deleted from default namespace
+pod "test-sts-65" deleted from default namespace
+pod "test-sts-66" deleted from default namespace
+pod "test-sts-67" deleted from default namespace
+pod "test-sts-68" deleted from default namespace
+Batch 3 complete
+=== Batch 4: Partition 23, pods 23-45 ===
+Time: 2026-07-01T03:48:03Z
+statefulset.apps/test-sts patched
+pod "test-sts-23" deleted from default namespace
+pod "test-sts-24" deleted from default namespace
+pod "test-sts-25" deleted from default namespace
+pod "test-sts-26" deleted from default namespace
+pod "test-sts-27" deleted from default namespace
+pod "test-sts-28" deleted from default namespace
+pod "test-sts-29" deleted from default namespace
+pod "test-sts-30" deleted from default namespace
+pod "test-sts-31" deleted from default namespace
+pod "test-sts-32" deleted from default namespace
+pod "test-sts-33" deleted from default namespace
+pod "test-sts-34" deleted from default namespace
+pod "test-sts-35" deleted from default namespace
+pod "test-sts-36" deleted from default namespace
+pod "test-sts-37" deleted from default namespace
+pod "test-sts-38" deleted from default namespace
+pod "test-sts-39" deleted from default namespace
+pod "test-sts-40" deleted from default namespace
+pod "test-sts-41" deleted from default namespace
+pod "test-sts-42" deleted from default namespace
+pod "test-sts-43" deleted from default namespace
+pod "test-sts-44" deleted from default namespace
+pod "test-sts-45" deleted from default namespace
+Batch 4 complete
+=== Batch 5: Partition 0, pods 0-22 ===
+Time: 2026-07-01T03:48:31Z
+statefulset.apps/test-sts patched
+pod "test-sts-0" deleted from default namespace
+pod "test-sts-1" deleted from default namespace
+pod "test-sts-2" deleted from default namespace
+pod "test-sts-3" deleted from default namespace
+pod "test-sts-4" deleted from default namespace
+pod "test-sts-5" deleted from default namespace
+pod "test-sts-6" deleted from default namespace
+pod "test-sts-7" deleted from default namespace
+pod "test-sts-8" deleted from default namespace
+pod "test-sts-9" deleted from default namespace
+pod "test-sts-10" deleted from default namespace
+pod "test-sts-11" deleted from default namespace
+pod "test-sts-12" deleted from default namespace
+pod "test-sts-13" deleted from default namespace
+pod "test-sts-14" deleted from default namespace
+pod "test-sts-15" deleted from default namespace
+pod "test-sts-16" deleted from default namespace
+pod "test-sts-17" deleted from default namespace
+pod "test-sts-18" deleted from default namespace
+pod "test-sts-19" deleted from default namespace
+pod "test-sts-20" deleted from default namespace
+pod "test-sts-21" deleted from default namespace
+pod "test-sts-22" deleted from default namespace
+Batch 5 complete
+=== Final state ===
+Total pods on new image: 115/115
+Partition: 0
