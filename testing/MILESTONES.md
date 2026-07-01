@@ -94,7 +94,7 @@
 - [x] Evidence captured to `testing/evidence/M6-ondelete/`
 - [ ] **Sign-off:** [ ]
 
-### M7: Independent Cold-Reader Walkthrough
+### M7: Independent Cold-Reader Walkthrough — PENDING
 - [ ] Walkthrough performed by independent reader OR clean-room self-test
 - [ ] Different cluster/namespace/StatefulSet name used (no hardcoded assumptions)
 - [ ] Every confusion point or ambiguity documented
@@ -102,13 +102,15 @@
 - [ ] Evidence captured to `testing/evidence/M7-independent/`
 - [ ] **Sign-off:** [ ]
 
+> **Note:** M7 requires an independent human reader to follow the guide cold on a separate cluster. This cannot be automated. Schedule with a colleague when ready.
+
 ### M8: Evidence Package & Engineering Report
-- [ ] All evidence files committed under `testing/evidence/M*-*/`
-- [ ] `testing/RESULTS.md` written with per-milestone pass/fail
-- [ ] Key measurements included (baseline timing vs. workaround timing)
-- [ ] Issues found and corrections made are documented
-- [ ] Residual risks / open items listed
-- [ ] Package is self-contained — engineering can review without running anything
+- [x] All evidence files committed under `testing/evidence/M*-*/`
+- [x] `testing/RESULTS.md` written with per-milestone pass/fail
+- [x] Key measurements included (baseline timing vs. workaround timing)
+- [x] Issues found and corrections made are documented
+- [x] Residual risks / open items listed
+- [x] Package is self-contained — engineering can review without running anything
 - [ ] **Sign-off:** [ ]
 
 ---
