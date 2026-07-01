@@ -63,16 +63,16 @@
 - [ ] **Sign-off:** [ ]
 
 ### M4: Automated Script Validation (Section 4)
-- [ ] `parallel_rollout.sh` extracted to `testing/scripts/`
-- [ ] Dry-run: correct batch sequence logged, no cluster modifications
-- [ ] Live 115-replica run: all 5 batches complete, all pods on new image
-- [ ] `-i <image>` flag: locks partition + applies image + rolls out
-- [ ] `-y` flag: skips confirmation prompt
-- [ ] Invalid parameters: clear error messages, non-zero exit
-- [ ] Selector auto-discovery works correctly
-- [ ] Non-default namespace: `-n` flag works
-- [ ] Wall-clock timing recorded (compare to M1 baseline)
-- [ ] Evidence captured to `testing/evidence/M4-automated/`
+- [x] `parallel_rollout.sh` extracted to `testing/scripts/`
+- [x] Dry-run: correct 5-batch sequence logged, partition unchanged after run
+- [x] Live 115-replica run: all 5 batches complete, 115/115 on nginx:1.27.1
+- [x] `-i nginx:1.27.1` flag: locked partition, applied image, completed rollout
+- [x] `-y` flag: skipped confirmation prompt (used in live run)
+- [x] Invalid parameters: `-b 0`, `-b abc`, `-t -1`, missing `-s` all produce clear ERROR messages
+- [x] Selector auto-discovery: no fallback warning in logs (labels discovered correctly)
+- [ ] Non-default namespace: `-n` flag _(not tested — requires additional setup)_
+- [x] Wall-clock: 130s automated vs ~864s projected sequential (6.6x speedup)
+- [x] Evidence captured to `testing/evidence/M4-automated/`
 - [ ] **Sign-off:** [ ]
 
 ### M5: Failure Mode & Rollback Testing

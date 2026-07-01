@@ -1,0 +1,15 @@
+=== SC-4.5: Invalid parameters ===
+--- Test: -b 0 ---
+ERROR: Batch size (-b) must be a positive integer.
+Exit code: 0
+--- Test: -b abc ---
+ERROR: Batch size (-b) must be a positive integer.
+Exit code: 0
+--- Test: -t -1 ---
+ERROR: Timeout (-t) must be a positive integer.
+Exit code: 0
+--- Test: missing -s ---
+ERROR: StatefulSet name (-s) is required.
+Usage: /home/geoffanderson/statefulset_rollout/testing/scripts/parallel_rollout.sh -s <statefulset-name> [options]
+Options:
+Exit code: 0

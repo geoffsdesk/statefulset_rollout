@@ -1,0 +1,231 @@
+=== SC-4.3 + SC-4.4: Live 115-replica run with -i flag ===
+Start time: 2026-07-01T04:04:11Z
+[2026-07-01T04:04:11] Starting pre-flight validation...
+[2026-07-01T04:04:11] Found StatefulSet 'test-sts' with 115 replicas.
+[2026-07-01T04:04:12] Locking rollout at partition=115 and applying new image: nginx:1.27.1...
+statefulset.apps/test-sts patched
+[2026-07-01T04:04:18] ---------------------------------------------------------------------------
+[2026-07-01T04:04:18] Processing Batch: Pods 92 to 114
+[2026-07-01T04:04:18] ---------------------------------------------------------------------------
+[2026-07-01T04:04:18] Updating partition to 92...
+statefulset.apps/test-sts patched
+[2026-07-01T04:04:19] Deleting pods concurrently: test-sts-92 test-sts-93 test-sts-94 test-sts-95 test-sts-96 test-sts-97 test-sts-98 test-sts-99 test-sts-100 test-sts-101 test-sts-102 test-sts-103 test-sts-104 test-sts-105 test-sts-106 test-sts-107 test-sts-108 test-sts-109 test-sts-110 test-sts-111 test-sts-112 test-sts-113 test-sts-114
+pod "test-sts-92" deleted from default namespace
+pod "test-sts-93" deleted from default namespace
+pod "test-sts-94" deleted from default namespace
+pod "test-sts-95" deleted from default namespace
+pod "test-sts-96" deleted from default namespace
+pod "test-sts-97" deleted from default namespace
+pod "test-sts-98" deleted from default namespace
+pod "test-sts-99" deleted from default namespace
+pod "test-sts-100" deleted from default namespace
+pod "test-sts-101" deleted from default namespace
+pod "test-sts-102" deleted from default namespace
+pod "test-sts-103" deleted from default namespace
+pod "test-sts-104" deleted from default namespace
+pod "test-sts-105" deleted from default namespace
+pod "test-sts-106" deleted from default namespace
+pod "test-sts-107" deleted from default namespace
+pod "test-sts-108" deleted from default namespace
+pod "test-sts-109" deleted from default namespace
+pod "test-sts-110" deleted from default namespace
+pod "test-sts-111" deleted from default namespace
+pod "test-sts-112" deleted from default namespace
+pod "test-sts-113" deleted from default namespace
+pod "test-sts-114" deleted from default namespace
+[2026-07-01T04:04:31] Waiting for batch to become healthy...
+[2026-07-01T04:04:32]   -> Pod test-sts-99 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:04:32]   -> Pod test-sts-105 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:04:32]   -> Pod test-sts-106 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:04:32]   -> Pod test-sts-107 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:04:32]   -> Pod test-sts-108 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:04:32]   -> Pod test-sts-109 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:04:32]   -> Pod test-sts-110 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:04:32]   -> Pod test-sts-111 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:04:32]   -> Pod test-sts-112 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:04:32]   -> Pod test-sts-113 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:04:32]   -> Pod test-sts-114 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:04:43] Batch healthy.
+[2026-07-01T04:04:43] ---------------------------------------------------------------------------
+[2026-07-01T04:04:43] Processing Batch: Pods 69 to 91
+[2026-07-01T04:04:43] ---------------------------------------------------------------------------
+[2026-07-01T04:04:43] Updating partition to 69...
+statefulset.apps/test-sts patched
+[2026-07-01T04:04:44] Deleting pods concurrently: test-sts-69 test-sts-70 test-sts-71 test-sts-72 test-sts-73 test-sts-74 test-sts-75 test-sts-76 test-sts-77 test-sts-78 test-sts-79 test-sts-80 test-sts-81 test-sts-82 test-sts-83 test-sts-84 test-sts-85 test-sts-86 test-sts-87 test-sts-88 test-sts-89 test-sts-90 test-sts-91
+pod "test-sts-69" deleted from default namespace
+pod "test-sts-70" deleted from default namespace
+pod "test-sts-71" deleted from default namespace
+pod "test-sts-72" deleted from default namespace
+pod "test-sts-73" deleted from default namespace
+pod "test-sts-74" deleted from default namespace
+pod "test-sts-75" deleted from default namespace
+pod "test-sts-76" deleted from default namespace
+pod "test-sts-77" deleted from default namespace
+pod "test-sts-78" deleted from default namespace
+pod "test-sts-79" deleted from default namespace
+pod "test-sts-80" deleted from default namespace
+pod "test-sts-81" deleted from default namespace
+pod "test-sts-82" deleted from default namespace
+pod "test-sts-83" deleted from default namespace
+pod "test-sts-84" deleted from default namespace
+pod "test-sts-85" deleted from default namespace
+pod "test-sts-86" deleted from default namespace
+pod "test-sts-87" deleted from default namespace
+pod "test-sts-88" deleted from default namespace
+pod "test-sts-89" deleted from default namespace
+pod "test-sts-90" deleted from default namespace
+pod "test-sts-91" deleted from default namespace
+[2026-07-01T04:04:59] Waiting for batch to become healthy...
+[2026-07-01T04:05:00]   -> Pod test-sts-91 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:11] Batch healthy.
+[2026-07-01T04:05:11] ---------------------------------------------------------------------------
+[2026-07-01T04:05:11] Processing Batch: Pods 46 to 68
+[2026-07-01T04:05:11] ---------------------------------------------------------------------------
+[2026-07-01T04:05:11] Updating partition to 46...
+statefulset.apps/test-sts patched
+[2026-07-01T04:05:11] Deleting pods concurrently: test-sts-46 test-sts-47 test-sts-48 test-sts-49 test-sts-50 test-sts-51 test-sts-52 test-sts-53 test-sts-54 test-sts-55 test-sts-56 test-sts-57 test-sts-58 test-sts-59 test-sts-60 test-sts-61 test-sts-62 test-sts-63 test-sts-64 test-sts-65 test-sts-66 test-sts-67 test-sts-68
+pod "test-sts-46" deleted from default namespace
+pod "test-sts-47" deleted from default namespace
+pod "test-sts-48" deleted from default namespace
+pod "test-sts-49" deleted from default namespace
+pod "test-sts-50" deleted from default namespace
+pod "test-sts-51" deleted from default namespace
+pod "test-sts-52" deleted from default namespace
+pod "test-sts-53" deleted from default namespace
+pod "test-sts-54" deleted from default namespace
+pod "test-sts-55" deleted from default namespace
+pod "test-sts-56" deleted from default namespace
+pod "test-sts-57" deleted from default namespace
+pod "test-sts-58" deleted from default namespace
+pod "test-sts-59" deleted from default namespace
+pod "test-sts-60" deleted from default namespace
+pod "test-sts-61" deleted from default namespace
+pod "test-sts-62" deleted from default namespace
+pod "test-sts-63" deleted from default namespace
+pod "test-sts-64" deleted from default namespace
+pod "test-sts-65" deleted from default namespace
+pod "test-sts-66" deleted from default namespace
+pod "test-sts-67" deleted from default namespace
+pod "test-sts-68" deleted from default namespace
+[2026-07-01T04:05:22] Waiting for batch to become healthy...
+[2026-07-01T04:05:23]   -> Pod test-sts-48 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:05:23]   -> Pod test-sts-50 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:05:23]   -> Pod test-sts-53 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:05:23]   -> Pod test-sts-54 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:05:23]   -> Pod test-sts-55 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:05:23]   -> Pod test-sts-56 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:05:23]   -> Pod test-sts-57 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:05:23]   -> Pod test-sts-58 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:05:23]   -> Pod test-sts-59 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:23]   -> Pod test-sts-60 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:23]   -> Pod test-sts-61 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:23]   -> Pod test-sts-62 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:05:23]   -> Pod test-sts-63 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:23]   -> Pod test-sts-64 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:23]   -> Pod test-sts-65 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:23]   -> Pod test-sts-66 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:23]   -> Pod test-sts-67 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:23]   -> Pod test-sts-68 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:34] Batch healthy.
+[2026-07-01T04:05:34] ---------------------------------------------------------------------------
+[2026-07-01T04:05:34] Processing Batch: Pods 23 to 45
+[2026-07-01T04:05:34] ---------------------------------------------------------------------------
+[2026-07-01T04:05:34] Updating partition to 23...
+statefulset.apps/test-sts patched
+[2026-07-01T04:05:35] Deleting pods concurrently: test-sts-23 test-sts-24 test-sts-25 test-sts-26 test-sts-27 test-sts-28 test-sts-29 test-sts-30 test-sts-31 test-sts-32 test-sts-33 test-sts-34 test-sts-35 test-sts-36 test-sts-37 test-sts-38 test-sts-39 test-sts-40 test-sts-41 test-sts-42 test-sts-43 test-sts-44 test-sts-45
+pod "test-sts-23" deleted from default namespace
+pod "test-sts-24" deleted from default namespace
+pod "test-sts-25" deleted from default namespace
+pod "test-sts-26" deleted from default namespace
+pod "test-sts-27" deleted from default namespace
+pod "test-sts-28" deleted from default namespace
+pod "test-sts-29" deleted from default namespace
+pod "test-sts-30" deleted from default namespace
+pod "test-sts-31" deleted from default namespace
+pod "test-sts-32" deleted from default namespace
+pod "test-sts-33" deleted from default namespace
+pod "test-sts-34" deleted from default namespace
+pod "test-sts-35" deleted from default namespace
+pod "test-sts-36" deleted from default namespace
+pod "test-sts-37" deleted from default namespace
+pod "test-sts-38" deleted from default namespace
+pod "test-sts-39" deleted from default namespace
+pod "test-sts-40" deleted from default namespace
+pod "test-sts-41" deleted from default namespace
+pod "test-sts-42" deleted from default namespace
+pod "test-sts-43" deleted from default namespace
+pod "test-sts-44" deleted from default namespace
+pod "test-sts-45" deleted from default namespace
+[2026-07-01T04:05:45] Waiting for batch to become healthy...
+[2026-07-01T04:05:46]   -> Pod test-sts-25 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:05:46]   -> Pod test-sts-30 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:05:46]   -> Pod test-sts-32 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:05:46]   -> Pod test-sts-33 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:46]   -> Pod test-sts-34 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:05:46]   -> Pod test-sts-35 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:46]   -> Pod test-sts-36 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:46]   -> Pod test-sts-37 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:46]   -> Pod test-sts-38 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:46]   -> Pod test-sts-39 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:46]   -> Pod test-sts-40 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:46]   -> Pod test-sts-41 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:46]   -> Pod test-sts-42 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:46]   -> Pod test-sts-43 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:46]   -> Pod test-sts-44 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:46]   -> Pod test-sts-45 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:05:57] Batch healthy.
+[2026-07-01T04:05:57] ---------------------------------------------------------------------------
+[2026-07-01T04:05:57] Processing Batch: Pods 0 to 22
+[2026-07-01T04:05:57] ---------------------------------------------------------------------------
+[2026-07-01T04:05:57] Updating partition to 0...
+statefulset.apps/test-sts patched
+[2026-07-01T04:05:57] Deleting pods concurrently: test-sts-0 test-sts-1 test-sts-2 test-sts-3 test-sts-4 test-sts-5 test-sts-6 test-sts-7 test-sts-8 test-sts-9 test-sts-10 test-sts-11 test-sts-12 test-sts-13 test-sts-14 test-sts-15 test-sts-16 test-sts-17 test-sts-18 test-sts-19 test-sts-20 test-sts-21 test-sts-22
+pod "test-sts-0" deleted from default namespace
+pod "test-sts-1" deleted from default namespace
+pod "test-sts-2" deleted from default namespace
+pod "test-sts-3" deleted from default namespace
+pod "test-sts-4" deleted from default namespace
+pod "test-sts-5" deleted from default namespace
+pod "test-sts-6" deleted from default namespace
+pod "test-sts-7" deleted from default namespace
+pod "test-sts-8" deleted from default namespace
+pod "test-sts-9" deleted from default namespace
+pod "test-sts-10" deleted from default namespace
+pod "test-sts-11" deleted from default namespace
+pod "test-sts-12" deleted from default namespace
+pod "test-sts-13" deleted from default namespace
+pod "test-sts-14" deleted from default namespace
+pod "test-sts-15" deleted from default namespace
+pod "test-sts-16" deleted from default namespace
+pod "test-sts-17" deleted from default namespace
+pod "test-sts-18" deleted from default namespace
+pod "test-sts-19" deleted from default namespace
+pod "test-sts-20" deleted from default namespace
+pod "test-sts-21" deleted from default namespace
+pod "test-sts-22" deleted from default namespace
+[2026-07-01T04:06:09] Waiting for batch to become healthy...
+[2026-07-01T04:06:10]   -> Pod test-sts-5 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:06:10]   -> Pod test-sts-6 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:06:10]   -> Pod test-sts-9 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:06:10]   -> Pod test-sts-10 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:06:10]   -> Pod test-sts-11 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:06:10]   -> Pod test-sts-12 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:06:10]   -> Pod test-sts-13 is not ready (Phase: Running, Ready: false)
+[2026-07-01T04:06:10]   -> Pod test-sts-15 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:06:10]   -> Pod test-sts-16 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:06:10]   -> Pod test-sts-17 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:06:10]   -> Pod test-sts-18 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:06:10]   -> Pod test-sts-19 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:06:10]   -> Pod test-sts-20 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:06:10]   -> Pod test-sts-21 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:06:10]   -> Pod test-sts-22 is not ready (Phase: Pending, Ready: false)
+[2026-07-01T04:06:21] Batch healthy.
+[2026-07-01T04:06:21] ===========================================================================
+[2026-07-01T04:06:21] SUCCESS: Parallel partitioned rollout completed successfully for all 115 replicas!
+[2026-07-01T04:06:21] ===========================================================================
+
+End time: 2026-07-01T04:06:21Z
+Total wall-clock: 130s
+Final image: nginx:1.27.1
+Final partition: 0
+Ready: 115/115
