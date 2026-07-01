@@ -1,0 +1,36 @@
+--- Sample at +10s (03:38:32) ---
+Pods not Running: 0 | Pods on new image: 2/115
+--- Sample at +20s (03:38:43) ---
+Pods not Running: 0 | Pods on new image: 3/115
+--- Sample at +30s (03:38:54) ---
+Pods not Running: 0 | Pods on new image: 4/115
+--- Sample at +40s (03:39:05) ---
+Pods not Running: 0 | Pods on new image: 5/115
+--- Sample at +50s (03:39:17) ---
+Pods not Running: 1 | Pods on new image: 7/115
+--- Sample at +60s (03:39:28) ---
+Pods not Running: 1 | Pods on new image: 7/115
+--- Sample at +70s (03:39:40) ---
+Pods not Running: 1 | Pods on new image: 9/115
+--- Sample at +80s (03:39:51) ---
+Pods not Running: 1 | Pods on new image: 10/115
+--- Sample at +90s (03:40:02) ---
+Pods not Running: 0 | Pods on new image: 12/115
+
+=== Regression Analysis ===
+90 seconds elapsed: 12/115 pods updated (~1 pod per 7.5s)
+Expected with maxUnavailable 20%: 23 pods in batch 1 within ~15s
+Projected full rollout time at sequential rate: ~14.4 minutes (115 * 7.5s)
+Expected with parallel batches: ~5 batches * ~15s = ~75 seconds
+
+=== SC-1.1: Sequential behavior confirmed ===
+VERDICT: PASS — pods are updating one at a time (at most 1 not-Running at any sample point)
+
+=== SC-1.2: Wall-clock proves sequential ===
+VERDICT: PASS — 12 pods in 90s = ~7.5s/pod, not batch behavior
+
+=== Revert complete ===
+All 115 pods back on nginx:1.27.0 (verified by rollout status)
+The revert itself further confirms the regression: 'Waiting for 1 pods to be ready' x100+
+nginx:1.27.0
+Clean state confirmed for M2+

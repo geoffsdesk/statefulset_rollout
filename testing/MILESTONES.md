@@ -31,11 +31,11 @@
 - [ ] **Sign-off:** [ ]
 
 ### M1: Regression Confirmation
-- [ ] Native rolling update triggered — observed 1-by-1 sequential behavior
-- [ ] Wall-clock timing recorded for first 10 pods
-- [ ] `maxUnavailable` present in spec but demonstrably ignored
-- [ ] StatefulSet reverted to original image (clean state for M2+)
-- [ ] Evidence captured to `testing/evidence/M1-regression/`
+- [x] Native rolling update triggered — observed 1-by-1 sequential behavior (12 pods in 90s, max 1 updating at a time)
+- [x] Wall-clock timing recorded for first 10 pods (~7.5s per pod, projected 14.4min for 115)
+- [x] `maxUnavailable` present in annotation but stripped from live spec (feature gate disabled)
+- [x] StatefulSet reverted to original image (clean state for M2+)
+- [x] Evidence captured to `testing/evidence/M1-regression/`
 - [ ] **Sign-off:** [ ]
 
 ### M2: Pre-flight Script Validation

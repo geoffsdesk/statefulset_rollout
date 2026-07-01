@@ -1,0 +1,9 @@
+=== Pre-update state ===
+maxUnavailable in annotation: 20%
+maxUnavailable in live spec: (stripped — feature gate disabled)
+status:
+  availableReplicas: 115
+  collisionCount: 0
+
+=== SC-1.3: maxUnavailable is set but ignored ===
+VERDICT: PASS — field present in annotation but absent from effective spec (feature gate disabled)
